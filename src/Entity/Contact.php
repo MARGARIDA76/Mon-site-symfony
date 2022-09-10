@@ -32,6 +32,14 @@ class Contact
     #[ORM\ManyToOne(inversedBy: 'contacts')]
     private ?Mission $Mission = null;
 
+    
+    public function __construct()
+    {
+        
+        $this->naissance = new \DateTimeImmutable();
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;

@@ -32,6 +32,14 @@ class Cible
     #[ORM\ManyToOne(inversedBy: 'cibles')]
     private ?Mission $Mission = null;
 
+
+    public function __construct()
+    {
+        
+        $this->date_naissance = new \DateTimeImmutable();
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;

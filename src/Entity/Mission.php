@@ -58,6 +58,10 @@ class Mission
         $this->cibles = new ArrayCollection();
         $this->contacts = new ArrayCollection();
         $this->planques = new ArrayCollection();
+        $this->date_debut = new \DateTimeImmutable();
+        $this->date_fin = new \DateTimeImmutable();
+    
+
     }
 
     public function getId(): ?int

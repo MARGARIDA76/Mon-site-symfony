@@ -40,6 +40,7 @@ class Agent
     public function __construct()
     {
         $this->specialites = new ArrayCollection();
+        $this->date_naissance = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
