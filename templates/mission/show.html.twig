@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mission{% endblock %}
+
+{% block body %}
+    <h1>Mission</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mission.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre_mission</th>
+                <td>{{ mission.titreMission }}</td>
+            </tr>
+            <tr>
+                <th>Description_mission</th>
+                <td>{{ mission.descriptionMission }}</td>
+            </tr>
+            <tr>
+                <th>Nom_code</th>
+                <td>{{ mission.nomCode }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ mission.pays }}</td>
+            </tr>
+            <tr>
+                <th>Type_mission</th>
+                <td>{{ mission.typeMission }}</td>
+            </tr>
+            <tr>
+                <th>Statut_mission</th>
+                <td>{{ mission.statutMission }}</td>
+            </tr>
+            <tr>
+                <th>Date_debut</th>
+                <td>{{ mission.dateDebut ? mission.dateDebut|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date_fin</th>
+                <td>{{ mission.dateFin ? mission.dateFin|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_mission_index') }}">back to list</a>
+
+    <a href="{{ path('app_mission_edit', {'id': mission.id}) }}">edit</a>
+
+    {{ include('mission/_delete_form.html.twig') }}
+{% endblock %}
