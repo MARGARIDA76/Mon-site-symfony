@@ -2,17 +2,17 @@
 
 {% block title %}
 
- {{mission.titreMission}} 
+{{ agent.nom }}
 {% endblock %}
 
 {% block body %}
 <div class="row mt-3">
     <div class="card" style="width: 18rem;">
-        <img src="https://www.potentiel-humain.eu/wp-content/uploads/2022/03/contrat_mission_potentiel_humain.png" class="card-img-top" alt="...">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTImCcwj7a-CYOiLWDzriL30IU7cLGLLUyMQA&usqp=CAU" class="card-img-top" alt="...">
         <div class="card-body">
 <div class="alert alert-sucess">
-<h1>{{mission.titreMission}}</h1>
-<p>{{mission.descriptionMission}}</p>
+<h1>{{ agent.nom }}</h1>
+<p>{{ agent.prenom }}</p>
 </div>
 </div>
 

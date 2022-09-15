@@ -14,8 +14,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/mission')]
 class MissionController extends AbstractController
-{
-
+{  
+    
     #[Route('/', name: 'mission.list')]
     public function index(ManagerRegistry $doctrine, MissionRepository $repository, PaginatorInterface $paginator, Request $request): Response 
     

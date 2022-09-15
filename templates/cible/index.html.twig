@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Cible {% endblock %}
+
+{% block body %}
+
+
+<h1> Liste des Cibles</h1>
+
+<div class="row">
+    {% for cible in cibles %}
+    <div class="card" style="width: 18rem;">
+      <img src="https://www.cadresenmission.com/wp-content/uploads/2020/07/Faire-un-rapport-de-fin-de-mission.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ cible.nom }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ cible.prenom }}</h6>
+          <a href="{{ path('cible.detail', {id: cible.id})}}" class="btn btn-primary">Voir le détail</a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+<div class="navigation d-flex justify-content-center mt-4">
+  {{ knp_pagination_render(cibles) }}
+</div>
+{% endblock %}

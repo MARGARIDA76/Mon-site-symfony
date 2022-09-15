@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{{ specialite.specialite }} 
+{% endblock %}
+
+{% block body %}
+<div class="row mt-3">
+    <div class="card" style="width: 18rem;">
+        <img src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_1024,h_683/https://groupe-reussite.fr/ressources/wp-content/uploads/2019/07/programme-1ere-spe-ses-1024x683.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+<div class="alert alert-sucess">
+<h1>{{ specialite.specialite }}</h1>
+<p>{{ specialite.description }}</p>
+</div>
+</div>
+
+{% endblock %}

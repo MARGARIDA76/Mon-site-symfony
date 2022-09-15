@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %} Liste des Specialites{% endblock %}
+
+{% block body %}
+
+
+<h1> Liste des Specialites</h1>
+
+<div class="row">
+    {% for specialite in specialites %}
+    <div class="card" style="width: 18rem;">
+      <img src="https://www.rentreediscount.com/publicmedia/original/426/876/56/fr/SES.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ specialite.specialite }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ specialite.description }}</h6>
+          <a href="{{ path('specialite.detail', {id: specialite.id})}}" class="btn btn-primary">Voir le détail</a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+<div class="navigation d-flex justify-content-center mt-4">
+  {{ knp_pagination_render(specialites) }}
+</div>
+
+{% endblock %}
+   

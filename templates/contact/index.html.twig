@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Contact {% endblock %}
+
+{% block body %}
+
+
+<h1> Liste des Contacts</h1>
+
+<div class="row">
+    {% for contact in contacts %}
+    <div class="card" style="width: 20rem;">
+      <img src="https://www.mission.fr/medias/monorub/_4T1.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ contact.nom }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ contact.prenom }}</h6>
+          <a href="{{ path('contact.detail', {id: contact.id})}}" class="btn btn-primary">Voir le détail</a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+<div class="navigation d-flex justify-content-center mt-4">
+  {{ knp_pagination_render(contacts) }}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Agents{% endblock %}
+
+{% block body %}
+    <h1>Liste des Agents</h1>
+
+   
+<div class="row">
+    {% for agent in agents %}
+    <div class="card" style="width: 18rem;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWYM8ViE4IQ0UIk1_GCi5dVKj2f7r_sJxmeQ&usqp=CAU" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ agent.nom }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ agent.prenom }}</h6>
+          <a href="{{ path('agent.detail', {id: agent.id})}}" class="btn btn-primary">Voir le détail</a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+<div class="navigation d-flex justify-content-center mt-4">
+  {{ knp_pagination_render(agents) }}
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Liste de Planque {% endblock %}
+
+
+{% block body %}
+
+
+<h1> Liste des Planques</h1>
+
+<div class="row">
+    {% for planque in planques %}
+    <div class="card" style="width: 18rem;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF6SBoZ2k-B1Ykci00Xp6B1S6WerjsQPKDcQ&usqp=CAU" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ planque.codePlanque }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ planque.adresse }}</h6>
+          <a href="{{ path('planque.detail', {id: planque.id})}}" class="btn btn-primary">Voir le détail</a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+<div class="navigation d-flex justify-content-center mt-4">
+  {{ knp_pagination_render(planques) }}
+</div>
+
+
+{% endblock %}

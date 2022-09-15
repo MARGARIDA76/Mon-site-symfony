@@ -2,7 +2,7 @@
 
 {% block title %}
 
- {{mission.titreMission}} 
+{{ cible.nom }}
 {% endblock %}
 
 {% block body %}
@@ -11,8 +11,8 @@
         <img src="https://www.potentiel-humain.eu/wp-content/uploads/2022/03/contrat_mission_potentiel_humain.png" class="card-img-top" alt="...">
         <div class="card-body">
 <div class="alert alert-sucess">
-<h1>{{mission.titreMission}}</h1>
-<p>{{mission.descriptionMission}}</p>
+<h1>{{ cible.nom }}</h1>
+<p>{{ cible.prenom }}</p>
 </div>
 </div>
 
