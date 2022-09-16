@@ -2,27 +2,34 @@
 
 namespace App\Controller\Admin;
 
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use App\Entity\Agent;
+use App\Entity\Cible;
+use App\Entity\Contact;
+use App\Entity\Mission;
+use App\Entity\Planque;
+use App\Entity\Specialite;
+use App\Entity\Utilisateur;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+
 
 class DashboardController extends AbstractDashboardController
-{
-    public function index(): Response
-    {
-    
+{       
+        #[Route('/admin', name: 'admin')]
+        public function index(): Response
+        {
             return $this->render('admin/dashboard.html.twig');
         }
     
+
         public function configureDashboard(): Dashboard
         {
             return Dashboard::new()
                 ->setTitle('GESTION-CONTENU');
         }
-    
-    
         
         public function configureMenuItems(): iterable
         {
